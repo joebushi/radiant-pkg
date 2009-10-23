@@ -1,0 +1,24 @@
+[submodule "vendor/plugins/yaml_db"]
+	path = vendor/plugins/yaml_db
+	url = git://github.com/adamwiggins/yaml_db.git
+[submodule "vendor/extensions/ray"]
+	path = vendor/extensions/ray
+	url = git://github.com/johnmuhl/radiant-ray-extension.git
+[submodule "lib/tasks/git-rake"]
+	path = lib/tasks/git-rake
+	url = git://github.com/flavorjones/git-rake.git
+[submodule "public/stylesheets/framework/gutterless-blueprint"]
+	path = public/stylesheets/framework/gutterless-blueprint
+	url = git@github.com:joebushi/gutterless_blueprint_css.git
+[submodule "public/stylesheets/framework/blueprint"]
+	path = public/stylesheets/framework/blueprint
+	url = git@github.com:joebushi/blueprint-css.git
+[submodule "vendor/radiant"]
+	path = vendor/radiant
+	url = git@github.com:joebushi/radiant.git
+[submodule "vendor/rails"]
+	path = vendor/rails
+	url = git://github.com/rails/rails.git
+[submodule "public/javascripts/lib/jquery"]
+	path = public/javascripts/lib/jquery
+	url = git://github.com/jquery/jquery.git

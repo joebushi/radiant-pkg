@@ -1,0 +1,51 @@
+---
+- name: settings
+  hub: joebushi
+- name: conditional-tags
+  hub: joebushi
+- name: copy-move
+  hub: joebushi
+- name: dashboard
+  hub: joebushi
+- name: help
+  hub: joebushi
+- name: import-export
+  hub: radiant
+- name: navigation_tags
+  hub: joebushi
+- name: nested-layouts
+  hub: moklett
+- name: page_preview
+  hub: joebushi
+- name: paperclipped
+  hub: kbingman
+- name: share-layouts
+  hub: radiant
+- name: sns
+  hub: SwankInnovations
+- name: wym-editor-filter
+  hub: jomz
+- name: sns-minifier
+  hub: SwankInnovations
+- name: sns-sass-filter
+  hub: SwankInnovations
+- name: drag-order
+  hub: joebushi
+# - name: multi-site
+#   hub: joebushi
+#   remote:
+#     - spanner
+# - name: submenu
+#   hub: joebushi
+#   remote:
+#     - spanner
+# - name: scoped-admin
+#   hub: joebushi
+#   remote:
+#     - spanner
+# # - name: dav
+# #   hub: joebushi
+# # - name: exception-notification
+# #   hub: joebushi
+# # - name: groups
+# #   hub: joebushi
