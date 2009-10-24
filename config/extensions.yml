@@ -19,6 +19,10 @@
   hub: joebushi
 - name: paperclipped
   hub: kbingman
+- name: paperclipped
+  hub: kbingman
+- name: paperclipped_taggable
+  hub: spanner
 - name: share-layouts
   hub: radiant
 - name: sns

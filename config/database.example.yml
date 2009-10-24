@@ -5,13 +5,13 @@ base: &base
   password: astb612
 
 development:
-  database: radiant_development
+  database: radiant_pkg_development
   <<: *base
 
 test:
-  database: radiant_test
+  database: radiant_pkg_test
   <<: *base
 
 production:
-  database: radiant_production
+  database: radiant_pkg_production
   <<: *base

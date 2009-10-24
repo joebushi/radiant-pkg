@@ -1,0 +1,61 @@
+
+--- 
+config: 
+  columns: 
+  - id
+  - key
+  - value
+  records: 
+  - - "1"
+    - admin.title
+    - Radiant CMS
+  - - "2"
+    - admin.subtitle
+    - Publishing for Small Teams
+  - - "3"
+    - defaults.page.parts
+    - body, sidebar
+  - - "4"
+    - defaults.page.status
+    - published
+  - - "5"
+    - defaults.page.filter
+    - ""
+  - - "6"
+    - session_timeout
+    - "1209600"
+
+--- 
+users: 
+  columns: 
+  - id
+  - name
+  - email
+  - login
+  - password
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - admin
+  - designer
+  - notes
+  - lock_version
+  - salt
+  - session_token
+  records: 
+  - - "1"
+    - Admin
+    - 
+    - admin
+    - a0de75a158f6059c0902818a2d02c2d151b033f8
+    - 2009-10-24 11:56:31
+    - 2009-10-24 11:56:31
+    - 
+    - 
+    - true
+    - false
+    - 
+    - "0"
+    - 73c8c797cb57742cbd5601a55b3ce6f16b2e3cff
+    - 

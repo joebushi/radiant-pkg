@@ -19,7 +19,8 @@ namespace :db do
     dir = Dir.new(backup_base)
     all_backups = dir.entries[2..-1].sort.reverse
     puts "Created backup: #{backup_file}"     
-    max_backups = ENV["MAX"].to_i || 20
+    max_backups = 20
+    # max_backups = ENV["MAX"].to_i || 20
     unwanted_backups = all_backups[max_backups..-1] || []
     for unwanted_backup in unwanted_backups
       FileUtils.rm_rf(File.join(backup_base, unwanted_backup))
