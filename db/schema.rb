@@ -11,9 +11,22 @@
 
 ActiveRecord::Schema.define(:version => 20081203140407) do
 
+  create_table "assets", :force => true do |t|
+    t.string   "caption"
+    t.string   "title"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "config", :force => true do |t|
-    t.string "key",   :limit => 40, :default => "", :null => false
-    t.string "value",               :default => ""
+    t.string "key",         :limit => 40, :default => "", :null => false
+    t.string "value",                     :default => ""
+    t.text   "description"
   end
 
   add_index "config", ["key"], :name => "key", :unique => true
@@ -33,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "updated_by_id"
     t.string   "content_type",  :limit => 40
     t.integer  "lock_version",                 :default => 0
+  end
+
+  create_table "page_attachments", :force => true do |t|
+    t.integer "asset_id"
+    t.integer "page_id"
+    t.integer "position"
   end
 
   create_table "page_parts", :force => true do |t|
@@ -61,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "lock_version",                 :default => 0
     t.string   "description"
     t.string   "keywords"
+    t.integer  "position"
   end
 
   add_index "pages", ["class_name"], :name => "pages_class_name"
@@ -89,6 +109,24 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
   end
 
   add_index "snippets", ["name"], :name => "name", :unique => true
+
+  create_table "text_asset_dependencies", :force => true do |t|
+    t.integer  "text_asset_id"
+    t.string   "names"
+    t.datetime "effectively_updated_at"
+  end
+
+  create_table "text_assets", :force => true do |t|
+    t.string   "class_name",    :limit => 25
+    t.string   "name",          :limit => 100
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.integer  "lock_version"
+    t.string   "filter_id",     :limit => 25
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name",          :limit => 100

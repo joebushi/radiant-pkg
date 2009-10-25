@@ -22,3 +22,48 @@
 [submodule "public/javascripts/lib/jquery"]
 	path = public/javascripts/lib/jquery
 	url = git://github.com/jquery/jquery.git
+[submodule "vendor/extensions/settings"]
+	path = vendor/extensions/settings
+	url = git@github.com:joebushi/radiant-settings-extension.git
+[submodule "vendor/extensions/wym_editor_filter"]
+	path = vendor/extensions/wym_editor_filter
+	url = git://github.com/jomz/radiant-wym-editor-filter-extension.git
+[submodule "vendor/extensions/import_export"]
+	path = vendor/extensions/import_export
+	url = git://github.com/radiant/radiant-import-export-extension.git
+[submodule "vendor/extensions/paperclipped"]
+	path = vendor/extensions/paperclipped
+	url = git://github.com/kbingman/paperclipped.git
+[submodule "vendor/extensions/conditional_tags"]
+	path = vendor/extensions/conditional_tags
+	url = git@github.com:joebushi/radiant-conditional-tags-extension.git
+[submodule "vendor/extensions/copy_move"]
+	path = vendor/extensions/copy_move
+	url = git@github.com:joebushi/radiant-copy-move-extension.git
+[submodule "vendor/extensions/help"]
+	path = vendor/extensions/help
+	url = git@github.com:joebushi/radiant-help-extension.git
+[submodule "vendor/extensions/navigation_tags"]
+	path = vendor/extensions/navigation_tags
+	url = git@github.com:joebushi/radiant-navigation_tags-extension.git
+[submodule "vendor/extensions/nested_layouts"]
+	path = vendor/extensions/nested_layouts
+	url = git://github.com/moklett/radiant-nested-layouts-extension.git
+[submodule "vendor/extensions/dashboard"]
+	path = vendor/extensions/dashboard
+	url = git@github.com:joebushi/radiant-dashboard-extension.git
+[submodule "vendor/extensions/drag_order"]
+	path = vendor/extensions/drag_order
+	url = git@github.com:joebushi/radiant-drag-order-extension.git
+[submodule "vendor/extensions/share_layouts"]
+	path = vendor/extensions/share_layouts
+	url = git://github.com/radiant/radiant-share-layouts-extension.git
+[submodule "vendor/extensions/sns"]
+	path = vendor/extensions/sns
+	url = git://github.com/SwankInnovations/radiant-sns-extension.git
+[submodule "vendor/extensions/sns_sass_filter"]
+	path = vendor/extensions/sns_sass_filter
+	url = git://github.com/SwankInnovations/radiant-sns-sass-filter-extension.git
+[submodule "vendor/extensions/sns_minifier"]
+	path = vendor/extensions/sns_minifier
+	url = git://github.com/SwankInnovations/radiant-sns-minifier-extension.git

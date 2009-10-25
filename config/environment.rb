@@ -17,14 +17,14 @@ Radiant::Initializer.run do |config|
   # Only load the extensions named here, in the order given. By default all
   # extensions in vendor/extensions are loaded, in alphabetical order. :all
   # can be used as a placeholder for all extensions not explicitly named.
-  # config.extensions = [ :all ]
+  config.extensions = [ :dashboard, :help, :settings, :all, :sns_minifier ]
 
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random,
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_radiant_distro_session',
+    :session_key => '_radiant_pkg_session',
     :secret      => '5cbe73b92ab443478eb710c04aeb4ce94ba006be'
   }
 
