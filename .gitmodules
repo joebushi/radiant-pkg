@@ -67,3 +67,9 @@
 [submodule "vendor/extensions/sns_minifier"]
 	path = vendor/extensions/sns_minifier
 	url = git://github.com/SwankInnovations/radiant-sns-minifier-extension.git
+[submodule "vendor/extensions/multi_site"]
+	path = vendor/extensions/multi_site
+	url = git@github.com:joebushi/radiant-multi-site-extension.git
+[submodule "vendor/extensions/submenu"]
+	path = vendor/extensions/submenu
+	url = git@github.com:joebushi/radiant-submenu-extension.git
