@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "updated_by_id"
     t.string   "content_type",  :limit => 40
     t.integer  "lock_version",                 :default => 0
+    t.integer  "site_id"
   end
 
   create_table "page_attachments", :force => true do |t|
@@ -97,6 +98,20 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "sites", :force => true do |t|
+    t.string   "name"
+    t.string   "domain"
+    t.integer  "homepage_id"
+    t.integer  "position",      :default => 0
+    t.string   "base_domain"
+    t.integer  "created_by_id"
+    t.datetime "created_at"
+    t.integer  "updated_by_id"
+    t.datetime "updated_at"
+    t.string   "subtitle"
+    t.string   "abbreviation"
+  end
+
   create_table "snippets", :force => true do |t|
     t.string   "name",          :limit => 100, :default => "", :null => false
     t.string   "filter_id",     :limit => 25
@@ -106,9 +121,23 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
     t.integer  "lock_version",                 :default => 0
+    t.integer  "site_id"
   end
 
   add_index "snippets", ["name"], :name => "name", :unique => true
+
+  create_table "submenu_links", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "user_id"
+    t.integer  "site_id"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "submenu_links", ["site_id", "user_id"], :name => "index_links_by_site_and_user"
 
   create_table "text_asset_dependencies", :force => true do |t|
     t.integer  "text_asset_id"
@@ -143,8 +172,7 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "lock_version",                 :default => 0
     t.string   "salt"
     t.string   "session_token"
+    t.integer  "site_id"
   end
-
-  add_index "users", ["login"], :name => "login", :unique => true
 
 end
