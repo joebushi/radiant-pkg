@@ -73,3 +73,6 @@
 [submodule "vendor/extensions/submenu"]
 	path = vendor/extensions/submenu
 	url = git@github.com:joebushi/radiant-submenu-extension.git
+[submodule "vendor/extensions/scoped_admin"]
+	path = vendor/extensions/scoped_admin
+	url = git@github.com:joebushi/radiant-scoped-admin-extension.git
