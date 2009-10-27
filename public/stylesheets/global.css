@@ -1,0 +1,21 @@
+/* Set framework width */
+
+div.container {
+	width: 950px !important;
+/*	margin: 0 auto;*/
+	background-color: #f3f3f3;
+}
+
+body {
+	background-color: #fff;
+}
+
+#left,
+#content,
+#right {
+	background-color: #fff;
+}
+
+#content h1 {
+
+}

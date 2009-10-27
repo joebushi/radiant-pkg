@@ -1,0 +1,413 @@
+
+--- 
+config: 
+  columns: 
+  - id
+  - key
+  - value
+  - description
+  records: 
+  - - "1"
+    - admin.title
+    - Radiant CMS
+    - Title text displayed at the top of all administration screens.
+  - - "2"
+    - admin.subtitle
+    - Publishing for Small Teams
+    - The tagline displayed underneath the main administration title
+  - - "3"
+    - defaults.page.parts
+    - body, extended, sidebar
+    - |
+      Defines the page parts that a new page is created with.  It should be a list, separated by a comma and a space.  For example:
+      
+      bq. @body, extended, sidebar@
+
+  - - "4"
+    - defaults.page.status
+    - published
+    - |
+      Defines the publishing status of new pages.  This can any one of:
+      
+      * draft
+      * published
+      * reviewed
+      * hidden
+
+  - - "5"
+    - defaults.page.filter
+    - WymEditor
+    - |
+      Sets the text filter a new page has by default.  Valid options, in a vanilla Radiant install are:
+      
+      * _leave blank to set no default filter_
+      * Markdown
+      * SmartyPants
+      * Textile
+
+  - - "6"
+    - session_timeout
+    - "1209600"
+    - 
+  - - "7"
+    - roles.settings
+    - admin
+    - List of user roles that may see the settings tabs.
+  - - "8"
+    - assets.additional_thumbnails
+    - normal=640x640>
+    - Defines the default sizes for image assets that are created when an image is uploaded. Use "#" to crop the image to a specific size. "42x42#" would be a square thumbnail, cropped in the center 42 pixels by 42 pixels.
+  - - "9"
+    - assets.display_size
+    - original
+    - "Sets which of your image sizes is shown is the edit view. Defaults to the \"original\" image size, but any size may be used. "
+  - - "10"
+    - assets.content_types
+    - image/jpeg, image/pjpeg, image/gif, image/png, image/x-png, image/jpg, video/x-m4v, video/quicktime, application/x-shockwave-flash, audio/mpeg, video/mpeg
+    - Defines the content types of that will be allowed to be uploaded as assets.
+  - - "11"
+    - assets.max_asset_size
+    - "5"
+    - The size in megabytes that will be the max size allowed to be uploaded for an asset
+  - - "12"
+    - assets.skip_filetype_validation
+    - "true"
+    - 
+  - - "13"
+    - SnS.stylesheet_directory
+    - css
+    - 
+  - - "14"
+    - SnS.javascript_directory
+    - js
+    - 
+
+--- 
+layouts: 
+  columns: 
+  - id
+  - name
+  - content
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - content_type
+  - lock_version
+  - site_id
+  records: 
+  - - "1"
+    - normal
+    - |
+      <r:snippet name="header" />
+      <r:snippet name="masthead" />
+      
+      <div class="container" id="content-wrapper">
+        <div class="span-20" id="left">
+      		<h2>Left column</h2>
+      		<r:nav include_root="true" depth="3" />
+      	</div>
+      
+        <div class="col span-55" id="content">
+        	<div class="box">
+        	<h1>Main content</h1>
+      		<r:content />
+          <r:if_content part="extended">
+          <div id="extended">
+            <r:content part="extended" />
+          </div>
+          </r:if_content>
+          </div>
+        </div>
+      
+        <div class="col span-20" id="right">
+        	<h3>Right column</h3>
+      		<r:content part="sidebar" inherit="true" />
+        </div>
+      </div>
+      
+      <r:snippet name="footer" />
+
+    - 2009-10-27 09:24:54
+    - 2009-10-27 10:27:47
+    - "1"
+    - "1"
+    - ""
+    - "4"
+    - "2"
+
+--- 
+page_parts: 
+  columns: 
+  - id
+  - name
+  - filter_id
+  - content
+  - page_id
+  records: 
+  - - "1"
+    - body
+    - WymEditor
+    - 
+    - "1"
+  - - "2"
+    - extended
+    - WymEditor
+    - 
+    - "1"
+  - - "3"
+    - body
+    - WymEditor
+    - |-
+      <h1>
+        Main site
+      </h1>
+    - "2"
+  - - "4"
+    - extended
+    - WymEditor
+    - ""
+    - "2"
+  - - "5"
+    - body
+    - WymEditor
+    - |-
+      <h1>
+        Alternate site
+      </h1>
+    - "3"
+  - - "6"
+    - extended
+    - WymEditor
+    - ""
+    - "3"
+
+--- 
+pages: 
+  columns: 
+  - id
+  - title
+  - slug
+  - breadcrumb
+  - class_name
+  - status_id
+  - parent_id
+  - layout_id
+  - created_at
+  - updated_at
+  - published_at
+  - created_by_id
+  - updated_by_id
+  - virtual
+  - lock_version
+  - description
+  - keywords
+  - position
+  records: 
+  - - "1"
+    - default_site Homepage
+    - default_site
+    - Home
+    - 
+    - "100"
+    - 
+    - 
+    - 2009-10-25 22:18:45
+    - 2009-10-25 22:18:45
+    - 2009-10-25 23:18:45
+    - 
+    - 
+    - false
+    - "0"
+    - 
+    - 
+    - 
+  - - "2"
+    - Main site Homepage
+    - main-site
+    - Home
+    - ""
+    - "100"
+    - 
+    - "1"
+    - 2009-10-25 22:20:31
+    - 2009-10-27 09:26:00
+    - 2009-10-25 23:20:31
+    - "1"
+    - "1"
+    - false
+    - "2"
+    - ""
+    - ""
+    - 
+  - - "3"
+    - Alternate site Homepage
+    - alternate-site
+    - Home
+    - ""
+    - "100"
+    - 
+    - 
+    - 2009-10-25 22:22:30
+    - 2009-10-25 22:24:08
+    - 2009-10-25 23:22:30
+    - "1"
+    - "1"
+    - false
+    - "1"
+    - ""
+    - ""
+    - 
+
+--- 
+sites: 
+  columns: 
+  - id
+  - name
+  - domain
+  - homepage_id
+  - position
+  - base_domain
+  - created_by_id
+  - created_at
+  - updated_by_id
+  - updated_at
+  - subtitle
+  - abbreviation
+  records: 
+  - - "1"
+    - default_site
+    - ""
+    - "1"
+    - "1"
+    - localhost
+    - 
+    - 2009-10-25 22:18:45
+    - 
+    - 2009-10-25 22:18:45
+    - 
+    - 
+  - - "2"
+    - Main site
+    - (demo|dev|test|www).radiant-pkg$
+    - "2"
+    - "2"
+    - radiant-pkg
+    - 
+    - 2009-10-25 22:20:31
+    - 
+    - 2009-10-25 22:20:31
+    - ""
+    - 
+  - - "3"
+    - Alternate site
+    - (demo|dev|test|www).radiant-pkg.alt$
+    - "3"
+    - "3"
+    - radiant-pkg.alt
+    - 
+    - 2009-10-25 22:22:30
+    - 
+    - 2009-10-25 22:22:30
+    - ""
+    - 
+
+--- 
+snippets: 
+  columns: 
+  - id
+  - name
+  - filter_id
+  - content
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - lock_version
+  - site_id
+  records: 
+  - - "1"
+    - masthead
+    - ""
+    - "    <div class=\"container\">\r\n      <div id=\"header\" class=\"span-95\">\r\n        <div id=\"logo\" class=\"span-20\">\r\n          <a href=\"URL\" title=\"title\">company logo here</a>\r\n        </div>\r\n        <div id=\"nav\" class=\"span-75\">\r\n          <r:nav include_root=\"true\" depth=\"1\" />\r\n        </div>\r\n      </div>\r\n    </div>"
+    - 2009-10-27 09:18:00
+    - 2009-10-27 09:57:10
+    - "1"
+    - "1"
+    - "2"
+    - "2"
+  - - "2"
+    - header
+    - ""
+    - |-
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+      <head>
+      	<title><r:title /></title>
+      	<script src="/js/lib/jquery.min.js" type="text/javascript"></script>
+      	<script src="/js/util.js" type="text/javascript"></script>
+      	<link rel="stylesheet" href="/css/framework-bpg/screen.css" type="text/css" media="screen, projection" />
+      	<link rel="stylesheet" href="/css/framework-bpg/gutterless.css" type="text/css" media="screen, projection" />
+      	<link rel="stylesheet" href="/css/framework-bpg/print.css" type="text/css" media="print" />
+      	<!--[if IE]><link rel="stylesheet" href="/css/framework-bpg/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+      
+      	<link rel="stylesheet" href="/css/global.css" type="text/css" media="screen, projection" />
+      	<link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
+      </head>
+      <body>
+    - 2009-10-27 09:19:00
+    - 2009-10-27 10:25:21
+    - "1"
+    - "1"
+    - "8"
+    - "2"
+  - - "3"
+    - footer
+    - ""
+    - "    <div class=\"container\" id=\"footer\">\r\n\
+      \t<h4>Footer</h4>\r\n\
+      <p>Add footer page to snippet.</p>\r\n    </div>\r\n  </body>\r\n\
+      </html>"
+    - 2009-10-27 09:21:06
+    - 2009-10-27 09:25:10
+    - "1"
+    - "1"
+    - "1"
+    - "2"
+
+--- 
+users: 
+  columns: 
+  - id
+  - name
+  - email
+  - login
+  - password
+  - created_at
+  - updated_at
+  - created_by_id
+  - updated_by_id
+  - admin
+  - developer
+  - notes
+  - lock_version
+  - salt
+  - session_token
+  - site_id
+  records: 
+  - - "1"
+    - Administrator
+    - 
+    - admin
+    - 41a3495782fd8b9d2211ef1d76d9100fe7198499
+    - 2009-10-25 21:10:28
+    - 2009-10-25 22:31:27
+    - 
+    - 
+    - true
+    - false
+    - 
+    - "1"
+    - d0631e03ef7177ff607e8311597009db837e4dfd
+    - 
+    - "2"

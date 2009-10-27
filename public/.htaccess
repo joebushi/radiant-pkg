@@ -26,6 +26,12 @@ RewriteEngine On
 #   Alias /myrailsapp /path/to/myrailsapp/public
 #   RewriteBase /myrailsapp
 
+# Make short and sweet paths to css/js files
+RewriteRule ^css/framework-bp/(.*)$ stylesheets/framework/blueprint/$1 [L]
+RewriteRule ^css/framework-bpg/(.*)$ stylesheets/framework/gutterless-blueprint/$1 [L]
+RewriteRule ^css/(.*)$ stylesheets/$1 [L]
+RewriteRule ^js/(.*)$ javascripts/$1 [L]
+
 RewriteRule ^$ index.html [QSA]
 RewriteRule ^([^.]+)$ $1.html [QSA]
 RewriteCond %{REQUEST_FILENAME} !-f
